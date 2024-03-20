@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 이력서</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('./logo.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .section h2 {
+            margin-top: 20px;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+        }
+        p, li {
+            line-height: 1.6;
+        }
+        .skill-level {
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .skill-level-bar {
+            height: 100%;
+            background-color: #007BFF;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./hong.jpg" alt="프로필 사진" style="width: 100px; height: 100px; border-radius: 50%; display: block; margin: 0 auto;">
+            <h1>홍길동의 이력서</h1>
+        </header>
+        <div class="section">
+            <h2 onclick="toggleContent(this)">개인 정보</h2>
+            <div class="content">
+                <p>이름: 홍길동</p>
+                <p>주소: <a href="https://www.google.com/maps/search/?api=1&query=통영시+경상국립대+통영캠퍼스" target="_blank">통영시 경상국립대 통영캠퍼스</a></p>
+                <p>이메일: honggildong@example.com</p>
+                <p>전화번호: 010-1234-5678</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleContent(this)">교육</h2>
+            <div class="content">
+                <p>20XX-20XX | 어떤 대학교 컴퓨터 과학 학사</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleContent(this)">경력</h2>
+            <div class="content">
+                <p>20XX-현재 | 어떤 회사, 직위</p>
+                <ul>
+                    <li>직무 수행 내용 1</li>
+                    <li>직무 수행 내용 2</li>
+                    <li>직무 수행 내용 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleContent(this)">스킬</h2>
+            <div class="content">
+                <div class="skill">
+                    <p>자바스크립트</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>Python</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>데이터 분석</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('h2').forEach(function(header) {
+            header.addEventListener('click', function() {
+                this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
